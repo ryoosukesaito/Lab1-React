@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- REACT API -->
+  <script src="https://unpkg.com/react@17.0.0/umd/react.production.min.js" crossorigin></script>
+  <!-- REACT DOM -->
+  <script src="https://unpkg.com/react-dom@17.0.0/umd/react-dom.production.min.js" crossorigin></script>
+  <!-- REACT COMPILER -->
+  <script src="https://unpkg.com/babel-standalone@6.26.0/babel.min.js" crossorigin></script>
+</head>
+<body>
+  <div id="root"></div>
+
+  <script type="text/babel">
+    const name = "Pembroke Welsh Corgi";
+    const imageURL = "https://images.dog.ceo/breeds/pembroke/n02113023_6015.jpg";
+    const markup = (
+      <div class="row">
+        <div class="col s2">
+         <div class="card medium">
+          <div class="card-image">
+            <img src={imageURL} />
+          </div>
+          <div class="card-content">
+            <p>{name}</p>
+          </div>
+        </div> 
+        </div>
+      </div>
+    )
+
+    const markup2 = 
+
+    React.createElement('div',{class: "row"},
+      React.createElement('div', {class: "col s2"},
+        React.createElement('div', {class: "card medium"},
+          React.createElement('div', {class: "card-image"}, 
+            React.createElement('img', {src: "https://images.dog.ceo/breeds/pembroke/n02113023_6015.jpg"}),
+            React.createElement('div', {class: "card-content"},
+              React.createElement('p', null, "Pembroke Welsh Corgi")
+            )
+          )  
+        )
+      )
+    )
+
+  // /*#__PURE__*/React.createElement("div", {class: "row"},
+  //  /*#__PURE__*/React.createElement("div", {class: "col s2"},
+  //   /*#__PURE__*/React.createElement("div", {class: "card medium"}, 
+  //   /*#__PURE__*/React.createElement("div", {class: "card-image"},
+  //    /*#__PURE__*/React.createElement("img", {src: "https://images.dog.ceo/breeds/pembroke/n02113023_6015.jpg"})), 
+  //    /*#__PURE__*/React.createElement("div", {class: "card-content"},
+  //     /*#__PURE__*/React.createElement("p", null, "Pembroke Welsh Corgi")))));
+
+    ReactDOM.render(markup2, document.getElementById('root'));
+
+
+    // const greeting = React.createElement("h1", {id: "hello-style"}, "Good morning");
+    // ReactDOM.render(markup, document.getElementById('root'))
+  </script>
+</body>
+</html>
